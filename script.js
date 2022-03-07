@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Alter twitter interface in some capacity
-// @namespace    http://cleyfaye.net/
-// @version      0.4
+// @namespace    https://github.com/CleyFaye/tolerable-twitter
+// @version      0.1
 // @description  Try to remove/change some of twitter UI to be less annoying.
 // @author       Gabriel Paul "Cley Faye" Risterucci
 // @match        https://twitter.com/*
