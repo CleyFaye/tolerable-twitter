@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Alter twitter interface in some capacity
 // @namespace    https://github.com/CleyFaye/tolerable-twitter
-// @version      0.1.1
+// @version      0.1.2
 // @description  Try to remove/change some of twitter UI to be less annoying.
 // @author       Gabriel Paul "Cley Faye" Risterucci
 // @match        https://twitter.com/*
@@ -10,7 +10,7 @@
 
 /** Hide the given DOM element */
 function hideDOM(elem) {
-  const hideValue = "none!important";
+  const hideValue = "none";
   if (elem.style.display !== hideValue) elem.style.display = hideValue;
 }
 
