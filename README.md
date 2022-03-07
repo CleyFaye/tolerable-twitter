@@ -17,5 +17,5 @@ Some parts only work in some locales.
 ## Installation
 
 If you want to use that script, first install [Tampermonkey](https://www.tampermonkey.net/), then go to the gist (it is a copy of this repository, for installation purpose:
-[gist link](https://gist.github.com/CleyFaye/7dafdad77c11d47f8038db3a5d7800cd/raw/bea9b605ef313c2bbb8c4289d890e99dcc507597/tolerable-twitter.user.js).
+[gist link](https://gist.github.com/CleyFaye/7dafdad77c11d47f8038db3a5d7800cd/raw/tolerable-twitter.user.js).
 Tampermonkey should automatically asks if you want to install the script.
