@@ -77,7 +77,7 @@ function removeMessagePane() {
 
 /** Run all removes in a slow loop */
 function runStuff() {
-  clearTrend();
+  removeTrending();
   clearSpoiler();
   removeMessagePane();
   setTimeout(runStuff, 1000);
