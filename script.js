@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Alter twitter interface in some capacity
 // @namespace    https://github.com/CleyFaye/tolerable-twitter
-// @version      0.1.2
+// @version      0.2.0
 // @description  Try to remove/change some of twitter UI to be less annoying.
 // @author       Gabriel Paul "Cley Faye" Risterucci
 // @match        https://twitter.com/*
@@ -75,11 +75,36 @@ function removeMessagePane() {
   if (panel) hideDOM(panel);
 }
 
+let switchToBetterTimeline = true;
+
+let maxTries = 50;
+function betterTimeline() {
+  const main = document.querySelector("main");
+  if (!main || main.clientHeight < (2 * window.innerHeight)) {
+    // Wait for twitter to actually load otherwise it will not refresh
+    setTimeout(betterTimeline, 100);
+    return;
+  }
+  if (maxTries-- <= 0) return;
+  const list = Array.from(document.querySelectorAll("a[href=\"/home\"]")).filter(c => c.role === "tab");
+  if (list.length >= 2) {
+    if (list[0].getAttribute("aria-selected") === "true") {
+      list[1].click();
+    } else if (list[1].getAttribute("aria-selected") === "true") return;
+  }
+  setTimeout(betterTimeline, 200);
+}
+
 /** Run all removes in a slow loop */
 function runStuff() {
-  removeTrending();
-  clearSpoiler();
-  removeMessagePane();
+  if (switchToBetterTimeline) {
+      betterTimeline();
+      switchToBetterTimeline = false;
+  } else {
+      removeTrending();
+      clearSpoiler();
+      removeMessagePane();
+  }
   setTimeout(runStuff, 1000);
 }
 
